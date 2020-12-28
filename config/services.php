@@ -33,5 +33,6 @@ return [
         'client_id'     => env('AMAZON_LOGIN_ID'),
         'client_secret' => env('AMAZON_LOGIN_SECRET'),
         'redirect'      => env('AMAZON_LOGIN_REDIRECT'),
+        'scopes'      => ['profile','postal_code'],
     ],
 ];

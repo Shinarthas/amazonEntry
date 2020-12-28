@@ -6,11 +6,12 @@
         "framework",
         "laravel"
     ],
-    "license": "MIT",
+    "license": "MIT", 
     "require": {
         "php": "^7.2",
-
+        "crocodicstudio/crudbooster": "5.5.*",
         "fideloper/proxy": "^4.0",
+        "keithbrink/amazon-mws-laravel": "5.*",
         "laravel/framework": "^6.18.35",
         "laravel/socialite": "^5.1",
         "laravel/tinker": "^2.0",

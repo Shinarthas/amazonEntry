@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Amazon Test
+                    <a href="{{route('amazonLink')}}">Amazon Test</a>
                 </div>
 
                 <div class="links">

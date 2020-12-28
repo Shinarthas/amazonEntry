@@ -11,6 +11,7 @@
 |
 */
 Route::get('/', 'Controller@index');
+Route::get('/test', 'Controller@test')->name('test');
+Route::get('/amazon', 'AmazonController@show')->name('amazonLink');
 Route::get('/amazon/callback', 'AmazonController@callback')->name('amazonCallback');
-Route::get('/amazon/{id}', 'AmazonController@show')->name('amazonLink');
 
