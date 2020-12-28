@@ -458,6 +458,9 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"Code","name"=>"code"];
 			$this->col[] = ["label"=>"Name","name"=>"name"];
+			$this->col[] = ["label"=>"Url","name"=>"code","callback"=>function($row) {
+                return "<a target='_blank' href='".route('amazonLink').'?'.$row->code."'>".route('amazonLink').'?'.$row->code."</a>";
+            }];
 			$this->col[] = ["label"=>"Redirect Url","name"=>"redirect_url"];
 			$this->col[] = ["label"=>"Created By","name"=>"created_by"];
 			$this->col[] = ["label"=>"Status","name"=>"status"];
@@ -469,7 +472,7 @@
 			$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required|unique:codes','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Redirect Url','name'=>'redirect_url','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Created By','name'=>'created_by','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'1|Enabled;0|Disabled;2|Iframe'];
+			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'1|Enabled(1);0|Disabled(0);2|Iframe'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM

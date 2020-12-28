@@ -20,17 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f5e7883-3050-48f2-ba5e-b287ede958b3" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/iframe.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/amazon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/untitled.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Customer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminCodesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminCodesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminCustomersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminCustomersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AmazonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AmazonController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_10_110110_codes.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_10_110110_codes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,12 +31,6 @@
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>state</find>
-      <find>label'=&gt;'Statu</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -217,7 +202,7 @@
       <workItem from="1606381598050" duration="5999000" />
       <workItem from="1607597932460" duration="2060000" />
       <workItem from="1607600074677" duration="1332000" />
-      <workItem from="1609145880866" duration="4812000" />
+      <workItem from="1609145880866" duration="6715000" />
     </task>
     <servers />
   </component>
@@ -252,9 +237,9 @@
       <screen x="-1920" y="-109" width="1920" height="1160" />
     </state>
     <state x="-1140" y="200" key="ftp.server.browser/0.0.1536.824/-1920.-109.1920.1160@-1920.-109.1920.1160" timestamp="1609146608115" />
-    <state x="-1297" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1609149557067">
+    <state x="-1297" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1609152818769">
       <screen x="-1920" y="-109" width="1920" height="1160" />
     </state>
-    <state x="-1297" y="146" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.-109.1920.1160@-1920.-109.1920.1160" timestamp="1609149557067" />
+    <state x="-1297" y="146" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.-109.1920.1160@-1920.-109.1920.1160" timestamp="1609152818769" />
   </component>
 </project>
