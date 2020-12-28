@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5517afa4-4f7a-46f5-9802-2ac3032d8349" name="amazonEntry">
+        <fileTransfer rootFolder="/var/www/amazonEntry" accessType="SFTP" host="54.38.241.173" port="22" sshConfigId="ffb71f8e-14d5-493a-bc62-ed64f369dce2" sshConfig="root@54.38.241.173:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

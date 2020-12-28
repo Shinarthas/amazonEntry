@@ -18,7 +18,7 @@ class Codes extends Migration
             $table->string('code');
             $table->string('redirect_url');
             $table->integer('created_by')->default(1);
-            $table->boolean('status')->default(true);
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

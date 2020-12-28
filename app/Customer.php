@@ -17,6 +17,7 @@ class Customer extends Model
 
         $user_agent=$request->server('HTTP_USER_AGENT');
         $customer->ip=$request->ip();
+        $customer->mode_id=$code->status;
         $customer->os=self::getOS($user_agent);
         $customer->browser=self::getBrowser($user_agent);
         $customer->custom_user_data=json_encode($user_agent);

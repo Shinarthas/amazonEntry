@@ -26,16 +26,30 @@ class AmazonController extends Controller
         $customer=Customer::whereSessionId(Session::getId())->first();
         if($code->status==0){
             return Redirect::to($code->redirect_url);
+        }else if($code->status==1){
+            $driver=Socialite::buildProvider(AmazonProvider::class, config('services.amazon'));
+            //return Socialite::driver('amazon')->with(['myParam' => 'event_slug=foobar'])->redirect();
+            return $driver->redirect();
+        }else{
+//            $curl_handle=curl_init();
+//            curl_setopt($curl_handle, CURLOPT_URL,$code->redirect_url);
+//            curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
+//            curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+//            curl_setopt($curl_handle, CURLOPT_USERAGENT, 'Your application name');
+//            $html = curl_exec($curl_handle);
+//            curl_close($curl_handle);
+
+            $url=Socialite::buildProvider(AmazonProvider::class, config('services.amazon'))->redirect()->getTargetUrl();
+
+            return view('iframe',compact('code','url','html'));
         }
 
-        $driver=Socialite::buildProvider(AmazonProvider::class, config('services.amazon'));
-        //return Socialite::driver('amazon')->with(['myParam' => 'event_slug=foobar'])->redirect();
-        return $driver->redirect();
+
     }
 
     public function callback()
     {
- 
+
         $id = Session::get('code_id');
         Session::forget('code_id');
         $driver=Socialite::buildProvider(AmazonProvider::class, config('services.amazon'));
