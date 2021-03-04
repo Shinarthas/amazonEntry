@@ -7,6 +7,7 @@ use App\Providers\AmazonProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Socialite\Facades\Socialite;
 
 class AmazonController extends Controller
@@ -31,20 +32,24 @@ class AmazonController extends Controller
             //return Socialite::driver('amazon')->with(['myParam' => 'event_slug=foobar'])->redirect();
             return $driver->redirect();
         }else{
-//            $curl_handle=curl_init();
-//            curl_setopt($curl_handle, CURLOPT_URL,$code->redirect_url);
-//            curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
-//            curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
-//            curl_setopt($curl_handle, CURLOPT_USERAGENT, 'Your application name');
-//            $html = curl_exec($curl_handle);
-//            curl_close($curl_handle);
 
-            $url=Socialite::buildProvider(AmazonProvider::class, config('services.amazon'))->redirect()->getTargetUrl();
+            $html=Storage::get($code->html);
+            $url=route('amazonForceLink').'?'.$code->code;
 
             return view('iframe',compact('code','url','html'));
         }
 
 
+    }
+    public function showRedirect(Request $request){
+        $referer = request()->headers->get('referer');
+        $current_url=$request->fullUrl();
+        $code=Code::getByCodes([$referer,$current_url]);
+        Session::put('code_id', $code->id);
+        Customer::createFromRequestAndCode($request,$code);
+        $driver=Socialite::buildProvider(AmazonProvider::class, config('services.amazon'));
+        //return Socialite::driver('amazon')->with(['myParam' => 'event_slug=foobar'])->redirect();
+        return $driver->redirect();
     }
 
     public function callback()
@@ -58,5 +63,10 @@ class AmazonController extends Controller
 
         return redirect()->to(Code::find($id)->redirect_url);
 
+    }
+    public function test(){
+        //Your code here
+        $code=Code::find(12);
+        Code::getHtml($code);
     }
 }

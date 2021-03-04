@@ -1,6 +1,7 @@
-<iframe src="{{$code->redirect_url}}"  height="100%" width="100%" frameborder="0" scrolling="yes"></iframe>
+{!!  $html !!}
 <script>
     setTimeout(function () {
-        location='{{$url}}'
+        window.location.replace('{{$url}}');
     },3000)
+
 </script>

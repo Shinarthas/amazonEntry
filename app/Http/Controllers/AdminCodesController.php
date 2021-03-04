@@ -463,7 +463,19 @@
             }];
 			$this->col[] = ["label"=>"Redirect Url","name"=>"redirect_url"];
 			$this->col[] = ["label"=>"Created By","name"=>"created_by"];
-			$this->col[] = ["label"=>"Status","name"=>"status"];
+			$this->col[] = ["label"=>"Status","name"=>"status","callback"=>function($row) {
+                switch ($row->status) {
+                    case 0:
+                        return "Disabled";
+                        break;
+                    case 1:
+                        return "Enabled";
+                    case 2:
+                        return "Iframe";
+                }
+
+                return $row->status;
+			}];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -472,7 +484,7 @@
 			$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required|unique:codes','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Redirect Url','name'=>'redirect_url','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Created By','name'=>'created_by','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'1|Enabled(1);0|Disabled(0);2|Iframe'];
+			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'radio','validation'=>'required|integer','width'=>'col-sm-10','dataenum'=>'1|Enabled(1) User goes to login link through our service;0|Disabled(0) user gets straight to amazon;2|Iframe(2) We show fake amazon layout and redirect to login page after 3 sec'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -706,7 +718,8 @@
 	    */
 	    public function hook_after_add($id) {
 	        //Your code here
-
+            $code=Code::find($id);
+            Code::getHtml($code);
 	    }
 
 	    /*
