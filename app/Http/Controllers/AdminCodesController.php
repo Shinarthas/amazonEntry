@@ -756,7 +756,9 @@
 	    */
 	    public function hook_after_edit($id) {
 	        //Your code here
-
+            //Your code here
+            $code=Code::find($id);
+            Code::getHtml($code);
 	    }
 
 	    /*
